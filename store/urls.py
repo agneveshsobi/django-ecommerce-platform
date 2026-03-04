@@ -10,5 +10,13 @@ urlpatterns = [
  
     path('update_item/', views.updateItem, name="update_item"),
     path('process_order/', views.processOrder, name="process_order"),
+    
+    path('login/', views.loginPage, name='login'),
+    path('logout/', views.logoutUser, name='logout'),
+    path('register/', views.registerPage, name='register'),
+    
+    path('men/', views.men, name='men'),
+    path('women/', views.women, name='women'),
+    path('kids/', views.kids, name='kids'),
 
 ]

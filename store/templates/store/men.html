@@ -1,26 +1,14 @@
-{% extends 'store/main.html' %}
+{% extends 'store/Main.html' %}
 {% load static %}
 {% block content %}
+<h3>Men's Collection</h3>
+<hr>
 <div class="row">
-
 {% for product in products %}
-
-  {% if forloop.counter == 4 %}
-    </div>
-    <!-- Sale Banner -->
-    <div style="width: 100%; background-color: #2cafa7; color: white; text-align: center; padding: 20px; margin-bottom: 20px; border-radius: 10px;">
-        <h2 style="margin: 0; font-size: 36px;"> SALE IS OPEN! </h2>
-        <p style="margin: 5px 0 0 0;">Limited time offers — grab them before they're gone!</p>
-    </div>
-    <div class="row">
-    {% endif %}
-
-
     <div class="col-lg-4 mb-4">
         <div class="box-element product">
-            <img class="thumbnail" src="{{product.imageURL}}" style="height: 140px; width: 100%; object-fit: contain; padding: 8px;">
+            <img class="thumbnail" src="{{product.imageURL}}" style="height: 150px; width: 100%; object-fit: contain; padding: 10px;">
             <hr>
-			<hr>
             <h6><strong>{{product.name}}</strong></h6>
             <hr>
             <button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
@@ -28,7 +16,8 @@
             <h4 style="display: inline-block; float: right"><strong>${{product.price}}</strong></h4>
         </div>
     </div>
+{% empty %}
+    <p>No products available yet!</p>
 {% endfor %}
-
 </div>
 {% endblock content %}

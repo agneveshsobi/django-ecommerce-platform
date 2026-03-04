@@ -1,0 +1,31 @@
+{% extends 'store/Main.html' %}
+{% load static %}
+{% block content %}
+
+<div class="row justify-content-center">
+    <div class="col-lg-4 col-md-6">
+        <div class="box-element" style="margin-top: 50px; padding: 30px;">
+            <h3 class="text-center" style="margin-bottom: 20px;">Login</h3>
+
+            {% if error %}
+            <div class="alert alert-danger">{{ error }}</div>
+            {% endif %}
+
+            <form method="POST" action="{% url 'login' %}">
+                {% csrf_token %}
+                <div class="form-field" style="margin-bottom: 15px;">
+                    <input class="form-control" type="text" name="username" placeholder="Username" required>
+                </div>
+                <div class="form-field" style="margin-bottom: 15px;">
+                    <input class="form-control" type="password" name="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn btn-success btn-block">Login</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<hr>
+<p class="text-center">Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+
+{% endblock content %}
