@@ -1,1 +1,1 @@
-web: gunicorn ecommerce.wsgi --chdir ecommerce
+web: gunicorn ecommerce.wsgi
