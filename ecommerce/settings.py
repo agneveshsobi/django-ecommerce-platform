@@ -26,7 +26,11 @@ SECRET_KEY = 'z+ksf@)0d^qojbh4rnp4b1to$hq&*tt(3bs$gf(3i267g$k9ln'
 import os
 DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.vercel.app']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.vercel.app', 'django-ecommerce-platform-sa6g.onrender.com']
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://django-ecommerce-platform-sa6g.onrender.com',
+]
 
 
 # Application definition
